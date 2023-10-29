@@ -61,8 +61,9 @@ require("lazy").setup({
         dependencies = {{'nvim-tree/nvim-web-devicons'}}
     }, 
     {"folke/which-key.nvim"},
-    { 'hrsh7th/vim-vsnip' },
+    {'hrsh7th/vim-vsnip' },
     {'hrsh7th/vim-vsnip-integ'},
+    {'tpope/vim-fugitive'},
 {
   "folke/flash.nvim",
   event = "VeryLazy",
