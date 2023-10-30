@@ -5,10 +5,10 @@ require("bufferline").setup {
         offsets = {
             {
                 filetype = "neo-tree",
-                text = "NVim", -- "File Explorer",
-                separator = true,
+                --text = "NVim", -- "File Explorer",
+                separator = false,
                 separator_style = "thin",
-                padding = 1
+                padding = 0
             }
         },
         diagnostics = "nvim_lsp",
@@ -16,10 +16,13 @@ require("bufferline").setup {
             icon = '', -- this should be omitted if indicator style is not 'icon'
             style = 'none'
         },
+        padding = 0,
         color_icons = true,
+        separator = false,
         separator_style = "thin",
         buffer_close_icon = "x",
         close_icon = '',
+        --move_wraps_at_ends = false,
 
 
     }
