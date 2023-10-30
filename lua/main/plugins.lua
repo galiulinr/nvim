@@ -9,6 +9,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    {'neovim/nvim-lspconfig'},
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.4',
