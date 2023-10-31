@@ -14,10 +14,10 @@ require("lazy").setup({
 
     --Colorscheme-- 
     
-    {'cooperuser/glowbeam.nvim'}, 
-    {'joshdick/onedark.vim'},
-    {'projekt0n/github-nvim-theme'},
-    {'rebelot/kanagawa.nvim'},
+    --{'cooperuser/glowbeam.nvim'}, 
+    --{'joshdick/onedark.vim'},
+    --{'projekt0n/github-nvim-theme'},
+    --{'rebelot/kanagawa.nvim'},
     {'shaunsingh/nord.nvim'},
 
     --GUI--
@@ -85,22 +85,29 @@ require("lazy").setup({
     {'tpope/vim-fugitive'},
         
     --LSP--
-
+    
+    --Lsp server configs
     {'neovim/nvim-lspconfig'},
+
+    --CMP - autocompletion plugin
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/cmp-buffer'},
+    {'hrsh7th/cmp-path'},
+    {'hrsh7th/cmp-cmdline'},
+    {'hrsh7th/nvim-cmp'},
+
+    --Snippet
+    {'hrsh7th/cmp-vsnip'},
+    {'hrsh7th/vim-vsnip'},
+
     --{'jose-elias-alvarez/null-ls.nvim'}, -- LSP diagnostics    
-    --{'hrsh7th/cmp-nvim-lsp'}, 
-    --{'hrsh7th/cmp-buffer'}, 
-    --{'hrsh7th/cmp-path'},
-    --{'hrsh7th/cmp-cmdline'}, 
-    --{'hrsh7th/nvim-cmp'},    
     --{'hrsh7th/cmp-nvim-lsp-signature-help'}, {
     --    'linrongbin16/lsp-progress.nvim',
     --    event = {'VimEnter'},
     --    dependencies = {'nvim-tree/nvim-web-devicons'},
     --    config = function() require('lsp-progress').setup() end
     --},
-    --{'hrsh7th/vim-vsnip' },
-    --{'hrsh7th/vim-vsnip-integ'},
+    {'hrsh7th/vim-vsnip-integ'},
     
     --
     --{
@@ -157,4 +164,4 @@ require("lazy").setup({
     --    },
     -- },
     --}
-    --});
+    });
