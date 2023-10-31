@@ -54,8 +54,14 @@ require("lazy").setup({
     {'Djancyp/outline'}, {'terrortylor/nvim-comment'},
     --Hotkey List
     {"folke/which-key.nvim"},
+
+
+    --Portable package manager--
         
+    {"williamboman/mason.nvim"},    
         
+
+    --Search--
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.4',
@@ -66,33 +72,36 @@ require("lazy").setup({
         build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' 
     },
 
-    {'nvim-treesitter/nvim-treesitter'}, 
+
+    --Editor--
+
+    {'nvim-treesitter/nvim-treesitter'}, -- highlighting
+    {'windwp/nvim-autopairs'},
+    {'windwp/nvim-ts-autotag'},
+
+    --GIT--
+        
+    {'lewis6991/gitsigns.nvim'},
+    {'tpope/vim-fugitive'},
+        
+    --LSP--
+
     {'neovim/nvim-lspconfig'},
+    {'jose-elias-alvarez/null-ls.nvim'}, -- LSP diagnostics    
     {'hrsh7th/cmp-nvim-lsp'}, 
     {'hrsh7th/cmp-buffer'}, 
     {'hrsh7th/cmp-path'},
     {'hrsh7th/cmp-cmdline'}, 
-    {'hrsh7th/nvim-cmp'}, 
-    {'lewis6991/gitsigns.nvim'},
-    
-    
-    {"williamboman/mason.nvim", build = ":MasonUpdate"},
-   
-    {'jose-elias-alvarez/null-ls.nvim'}, 
-    {'windwp/nvim-autopairs'},
-    {'windwp/nvim-ts-autotag'}, 
-
-    
+    {'hrsh7th/nvim-cmp'},    
     {'hrsh7th/cmp-nvim-lsp-signature-help'}, {
         'linrongbin16/lsp-progress.nvim',
         event = {'VimEnter'},
         dependencies = {'nvim-tree/nvim-web-devicons'},
         config = function() require('lsp-progress').setup() end
     },
-
     {'hrsh7th/vim-vsnip' },
     {'hrsh7th/vim-vsnip-integ'},
-    {'tpope/vim-fugitive'},
+    
     
     {
       "folke/flash.nvim",
