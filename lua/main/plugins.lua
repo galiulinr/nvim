@@ -1,3 +1,4 @@
+--Lazy Plugin Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -8,40 +9,34 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--Plugin List
 require("lazy").setup({
-    {'neovim/nvim-lspconfig'},
-    {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.4',
-        dependencies = {'nvim-lua/plenary.nvim'}
-    },
-    {'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+
+    --Colorscheme-- 
+    
     {'cooperuser/glowbeam.nvim'}, 
     {'joshdick/onedark.vim'},
     {'projekt0n/github-nvim-theme'},
     {'rebelot/kanagawa.nvim'},
     {'shaunsingh/nord.nvim'},
-    {'nvim-treesitter/nvim-treesitter'}, 
-    {'neovim/nvim-lspconfig'},
-    {'hrsh7th/cmp-nvim-lsp'}, 
-    {'hrsh7th/cmp-buffer'}, 
-    {'hrsh7th/cmp-path'},
-    {'hrsh7th/cmp-cmdline'}, 
-    {'hrsh7th/nvim-cmp'}, 
-    --{'flazz/vim-colorschemes'},
-    {'lewis6991/gitsigns.nvim'},
+
+    --GUI--
+    
+    --Dashboard
+    {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        dependencies = {{'nvim-tree/nvim-web-devicons'}}
+    },
+    --Status line
     {
         'nvim-lualine/lualine.nvim',
         dependencies = {
             'nvim-tree/nvim-web-devicons', 'linrongbin16/lsp-progress.nvim'
         }
-    }, 
-    {'nvim-tree/nvim-web-devicons'},
-    {"williamboman/mason.nvim", build = ":MasonUpdate"},
-    {'akinsho/toggleterm.nvim', version = "*", config = true},
-    {'jose-elias-alvarez/null-ls.nvim'}, {'windwp/nvim-autopairs'},
-    {'Djancyp/outline'}, {'terrortylor/nvim-comment'},
-    {'windwp/nvim-ts-autotag'}, {
+    },
+    --Files browser
+    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
         dependencies = {
@@ -49,74 +44,108 @@ require("lazy").setup({
             "MunifTanjim/nui.nvim", "s1n7ax/nvim-window-picker"
         }
     },
+    --Tabs
     {"akinsho/bufferline.nvim", dependencies = {'nvim-tree/nvim-web-devicons'}},
+    --Terminal
+    {'akinsho/toggleterm.nvim', version = "*", config = true},
+    --Fonts
+    {'nvim-tree/nvim-web-devicons'},
+    --Buffer management
+    {'Djancyp/outline'}, {'terrortylor/nvim-comment'},
+    --Hotkey List
+    {"folke/which-key.nvim"},
+        
+        
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.4',
+        dependencies = {'nvim-lua/plenary.nvim'}
+    },
+    {
+        'nvim-telescope/telescope-fzf-native.nvim', 
+        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' 
+    },
+
+    {'nvim-treesitter/nvim-treesitter'}, 
+    {'neovim/nvim-lspconfig'},
+    {'hrsh7th/cmp-nvim-lsp'}, 
+    {'hrsh7th/cmp-buffer'}, 
+    {'hrsh7th/cmp-path'},
+    {'hrsh7th/cmp-cmdline'}, 
+    {'hrsh7th/nvim-cmp'}, 
+    {'lewis6991/gitsigns.nvim'},
+    
+    
+    {"williamboman/mason.nvim", build = ":MasonUpdate"},
+   
+    {'jose-elias-alvarez/null-ls.nvim'}, 
+    {'windwp/nvim-autopairs'},
+    {'windwp/nvim-ts-autotag'}, 
+
+    
     {'hrsh7th/cmp-nvim-lsp-signature-help'}, {
         'linrongbin16/lsp-progress.nvim',
         event = {'VimEnter'},
         dependencies = {'nvim-tree/nvim-web-devicons'},
         config = function() require('lsp-progress').setup() end
     },
-    {
-        'glepnir/dashboard-nvim',
-        event = 'VimEnter',
-        dependencies = {{'nvim-tree/nvim-web-devicons'}}
-    }, 
-    {"folke/which-key.nvim"},
+
     {'hrsh7th/vim-vsnip' },
     {'hrsh7th/vim-vsnip-integ'},
     {'tpope/vim-fugitive'},
-{
-  "folke/flash.nvim",
-  event = "VeryLazy",
-  ---@type Flash.Config
-  opts = {},
-  keys = {
+    
     {
-      "s",
-      mode = { "n", "x", "o" },
-      function()
-require("flash").jump({
-  search = {
-    mode = function(str)
-      return "\\<" .. str
-    end,
-  },
-})
-      end,
-      desc = "Flash",
-    },
-    {
-      "S",
-      mode = { "n", "o", "x" },
-      function()
-        require("flash").treesitter()
-      end,
-      desc = "Flash Treesitter",
-    },
-    {
-      "r",
-      mode = "o",
-      function()
-        require("flash").remote()
-      end,
-      desc = "Remote Flash",
-    },
-    {
-      "R",
-      mode = { "o", "x" },
-      function()
-        require("flash").treesitter_search()
-      end,
-      desc = "Flash Treesitter Search",
-    },
-    {
-      "<c-s>",
-      mode = { "c" },
-      function()
-        require("flash").toggle()
-      end,
-      desc = "Toggle Flash Search",
-    },
-  },
-}
-});
+      "folke/flash.nvim",
+      event = "VeryLazy",
+      ---@type Flash.Config
+      opts = {},
+      keys = {
+        {
+          "s",
+          mode = { "n", "x", "o" },
+          function()
+    require("flash").jump({
+      search = {
+        mode = function(str)
+          return "\\<" .. str
+        end,
+      },
+    })
+          end,
+          desc = "Flash",
+        },
+        {
+          "S",
+          mode = { "n", "o", "x" },
+          function()
+            require("flash").treesitter()
+          end,
+          desc = "Flash Treesitter",
+        },
+        {
+          "r",
+          mode = "o",
+          function()
+            require("flash").remote()
+          end,
+          desc = "Remote Flash",
+        },
+        {
+          "R",
+          mode = { "o", "x" },
+          function()
+            require("flash").treesitter_search()
+          end,
+          desc = "Flash Treesitter Search",
+        },
+        {
+          "<c-s>",
+          mode = { "c" },
+          function()
+            require("flash").toggle()
+          end,
+          desc = "Toggle Flash Search",
+        },
+      },
+    }
+    });
