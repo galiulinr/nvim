@@ -87,74 +87,74 @@ require("lazy").setup({
     --LSP--
 
     {'neovim/nvim-lspconfig'},
-    {'jose-elias-alvarez/null-ls.nvim'}, -- LSP diagnostics    
-    {'hrsh7th/cmp-nvim-lsp'}, 
-    {'hrsh7th/cmp-buffer'}, 
-    {'hrsh7th/cmp-path'},
-    {'hrsh7th/cmp-cmdline'}, 
-    {'hrsh7th/nvim-cmp'},    
-    {'hrsh7th/cmp-nvim-lsp-signature-help'}, {
-        'linrongbin16/lsp-progress.nvim',
-        event = {'VimEnter'},
-        dependencies = {'nvim-tree/nvim-web-devicons'},
-        config = function() require('lsp-progress').setup() end
-    },
-    {'hrsh7th/vim-vsnip' },
-    {'hrsh7th/vim-vsnip-integ'},
+    --{'jose-elias-alvarez/null-ls.nvim'}, -- LSP diagnostics    
+    --{'hrsh7th/cmp-nvim-lsp'}, 
+    --{'hrsh7th/cmp-buffer'}, 
+    --{'hrsh7th/cmp-path'},
+    --{'hrsh7th/cmp-cmdline'}, 
+    --{'hrsh7th/nvim-cmp'},    
+    --{'hrsh7th/cmp-nvim-lsp-signature-help'}, {
+    --    'linrongbin16/lsp-progress.nvim',
+    --    event = {'VimEnter'},
+    --    dependencies = {'nvim-tree/nvim-web-devicons'},
+    --    config = function() require('lsp-progress').setup() end
+    --},
+    --{'hrsh7th/vim-vsnip' },
+    --{'hrsh7th/vim-vsnip-integ'},
     
-    
-    {
-      "folke/flash.nvim",
-      event = "VeryLazy",
-      ---@type Flash.Config
-      opts = {},
-      keys = {
-        {
-          "s",
-          mode = { "n", "x", "o" },
-          function()
-    require("flash").jump({
-      search = {
-        mode = function(str)
-          return "\\<" .. str
-        end,
-      },
-    })
-          end,
-          desc = "Flash",
-        },
-        {
-          "S",
-          mode = { "n", "o", "x" },
-          function()
-            require("flash").treesitter()
-          end,
-          desc = "Flash Treesitter",
-        },
-        {
-          "r",
-          mode = "o",
-          function()
-            require("flash").remote()
-          end,
-          desc = "Remote Flash",
-        },
-        {
-          "R",
-          mode = { "o", "x" },
-          function()
-            require("flash").treesitter_search()
-          end,
-          desc = "Flash Treesitter Search",
-        },
-        {
-          "<c-s>",
-          mode = { "c" },
-          function()
-            require("flash").toggle()
-          end,
-          desc = "Toggle Flash Search",
-        },
-      },
-    }
-    });
+    --
+    --{
+    --  "folke/flash.nvim",
+    --  event = "VeryLazy",
+    --  ---@type Flash.Config
+    --  opts = {},
+    --  keys = {
+    --   {
+    --      "s",
+    --     mode = { "n", "x", "o" },
+    --      function()
+    -- require("flash").jump({
+    --  search = {
+    --   mode = function(str)
+    --      return "\\<" .. str
+    --    end,
+    --  },
+    -- })
+    --      end,
+    --     desc = "Flash",
+    --    },
+    --    {
+    --      "S",
+    --      mode = { "n", "o", "x" },
+    --      function()
+    --        require("flash").treesitter()
+    --     end,
+    --      desc = "Flash Treesitter",
+    --    },
+    --    {
+    --      "r",
+    --      mode = "o",
+    --      function()
+    --        require("flash").remote()
+    --      end,
+    --      desc = "Remote Flash",
+    --    },
+    --    {
+    --      "R",
+    --     mode = { "o", "x" },
+    --      function()
+    --        require("flash").treesitter_search()
+    --      end,
+    --      desc = "Flash Treesitter Search",
+    --    },
+    --    {
+    --      "<c-s>",
+    --      mode = { "c" },
+    --      function()
+    --        require("flash").toggle()
+    --      end,
+    --      desc = "Toggle Flash Search",
+    --    },
+    -- },
+    --}
+    --});
