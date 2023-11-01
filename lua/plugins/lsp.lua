@@ -2,6 +2,7 @@
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.ccls.setup {}
+--lspconfig.lua-language-server {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
