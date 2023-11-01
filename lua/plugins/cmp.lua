@@ -2,6 +2,14 @@
   -- Set up nvim-cmp.
   local cmp = require'cmp'
 
+  vim.api.nvim_set_hl(0,"CMPNormal",{
+      --bg = "#000000", 
+      fg="#aaafff"})
+  vim.api.nvim_set_hl(0,"CMPFloatBorder",{
+      --bg = "#000000", 
+      fg="#988829"})
+  vim.api.nvim_set_hl(0,"CMPCursorLine",{bg = "#988829" , fg="#000000"})
+  
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -13,7 +21,10 @@
       end,
     },
     window = {
-      completion = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered(
+        {--border = "round",
+         winhighlight = "Normal:CMPNormal,FloatBorder:CMPFloatBorder,CursorLine:CMPCursorLine,Search:None"   
+      }),
       documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
