@@ -1,11 +1,12 @@
 require("bufferline").setup {
     options = {
-        close_command = "bdelete! %d",
+        --close_command = "bdelete! %d",
+        close_command = "BufDel %d",
         mode = 'buffers',
         offsets = {
             {
                 filetype = "neo-tree",
-                --text = "NVim", -- "File Explorer",
+                --text = "File Explorer",
                 separator = false,
                 separator_style = "thin",
                 padding = 0
@@ -27,3 +28,4 @@ require("bufferline").setup {
 
     }
 }
+

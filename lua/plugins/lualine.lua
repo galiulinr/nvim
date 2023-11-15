@@ -1,7 +1,7 @@
 require('lualine').setup {
-  options = {
+    options = {
     icons_enabled = true,
-    theme = 'nord',
+    theme = 'auto',
     -- component_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = ''},
     component_separators = { left = '', right = ''},
@@ -12,6 +12,7 @@ require('lualine').setup {
       winbar = {},
     },
     ignore_focus = {},
+    insert = {bg = '#FF0000'},
     always_divide_middle = true,
     globalstatus = true,
     refresh = {
@@ -48,3 +49,4 @@ augroup lualine_augroup
     autocmd User LspProgressStatusUpdated lua require("lualine").refresh()
 augroup END
 ]])
+

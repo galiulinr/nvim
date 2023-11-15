@@ -8,7 +8,7 @@ require'window-picker'.setup({
             visible = true,
         }
     },
-    other_win_hl_color = '#e35e4f'
+    --other_win_hl_color = '#e35e4f'
 })
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
@@ -19,6 +19,13 @@ vim.fn.sign_define("DiagnosticSignWarn",
 vim.fn.sign_define("DiagnosticSignInfo",
                    {text = " ", texthl = "DiagnosticSignInfo"})
 vim.fn.sign_define("DiagnosticSignHint",
-                   {text = "", texthl = "DiagnosticSignHint"})
+                    {text = "T", texthl = "DiagnosticSignHint"})
 
-require("neo-tree").setup({})
+require("neo-tree").setup({
+    default_component_configs = {
+         name = {
+            use_git_status_colors = false
+         }
+      }
+})
+
