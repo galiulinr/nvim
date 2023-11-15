@@ -1,4 +1,4 @@
---lua <<EOF
+--lua <<EOFH
   -- Set up nvim-cmp.
   local cmp = require'cmp'
 

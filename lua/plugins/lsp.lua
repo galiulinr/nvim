@@ -1,7 +1,19 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
-lspconfig.ccls.setup {}
+lspconfig.ccls.setup {
+   init_options = {
+     compilationDatabaseDirectory = "build";
+     index = {
+       threads = 0;
+     };
+     clang = {
+       excludeArgs = { "-frounding-math"} ;
+     };
+   }
+ }
+--lspconfig.ccls.setup {}
+--lspconfig.clangd.setup{}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
