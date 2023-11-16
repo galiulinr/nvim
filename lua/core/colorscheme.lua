@@ -17,4 +17,4 @@ function SetColorScheme(color)
  --vim.api.nvim_set_hl(0, "LineNr", {bg = "none"})
 end
 
-SetColorScheme('tender')
+SetColorScheme('monokai-pro-classic')

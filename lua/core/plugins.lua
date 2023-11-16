@@ -30,6 +30,7 @@ require("lazy").setup({
     "Mofiqul/vscode.nvim",
     --"projekt0n/github-nvim-theme",
     "dracula/vim",
+    "loctvl842/monokai-pro.nvim",
     --
 
     "Pocco81/auto-save.nvim",
