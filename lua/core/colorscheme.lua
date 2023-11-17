@@ -1,5 +1,9 @@
-vim.opt.termguicolors = true
- 
+if not vim.opt.termguicolors then
+    vim.opt.termguicolors = true
+end
+
+--vim.opt.background=dark
+
 function SetColorScheme(color)
   --color = color or "desert"
   --vim.cmd.colorscheme(color)
