@@ -1,6 +1,6 @@
-##recommended packages
+## recommended packages
 
-###fd
+### fd
 [github](https://github.com/sharkdp/fd)
 
 Ubuntu(Debian):
